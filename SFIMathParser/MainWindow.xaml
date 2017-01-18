@@ -1,0 +1,43 @@
+﻿<Window x:Class="SFIMathParser.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:SFIMathParser"
+        mc:Ignorable="d"
+        Title="Math Parser" Height="254.682" Width="435.275">
+    <Grid Margin="0,0,2,2">
+        <Grid.RowDefinitions>
+            <RowDefinition Height="52*"/>
+            <RowDefinition Height="44*"/>
+            <RowDefinition Height="127*"/>
+        </Grid.RowDefinitions>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="27*"/>
+            <ColumnDefinition Width="58*"/>
+        </Grid.ColumnDefinitions>
+        <TextBox x:Name="textBoxInput" HorizontalAlignment="Left" Height="24" Margin="0,10,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="159" Grid.Column="1" Grid.Row="1" KeyDown="OnKeyDownHandler"/>
+        <Button x:Name="buttonCalculate" Content="Calculate" Grid.Column="1" HorizontalAlignment="Left" Height="24" Margin="164,10,0,0" VerticalAlignment="Top" Width="88" Grid.Row="1" Click="buttonCalculate_Click"/>
+        <Grid Grid.Column="1" HorizontalAlignment="Left" Height="67" Grid.Row="2" VerticalAlignment="Top" Width="290">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition/>
+                <ColumnDefinition/>
+            </Grid.ColumnDefinitions>
+            <Label x:Name="labelQuestionHeader" Content="Expression" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="131"/>
+            <Label x:Name="labelAnswerHeader" Content="Answer" HorizontalAlignment="Left" Height="25" VerticalAlignment="Top" Width="131" Grid.Column="1"/>
+            <Label x:Name="labelQuestion" Content="" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="131" Margin="0,25,0,0"/>
+            <Label x:Name="labelAnswer" Content="" HorizontalAlignment="Left" Height="35" VerticalAlignment="Top" Width="131" Margin="0,25,0,0" Grid.Column="1"/>
+            <TextBlock x:Name="textBlockMessage" TextWrapping="Wrap" Text="" Margin="10,65,10,-55" Grid.ColumnSpan="2"/>
+        </Grid>
+        <TextBlock x:Name="textBlock" HorizontalAlignment="Left" Height="151" Margin="10,10,0,0" Grid.Row="1" TextWrapping="Wrap" VerticalAlignment="Top" Width="120" Grid.RowSpan="2">
+            Valid expressions:<LineBreak/>
+                   1 + 2<LineBreak/>
+                   3 - 2<LineBreak/>
+                   2 x 3<LineBreak/>
+                   6 / 2<LineBreak/>
+                   1 + 2 x 6 / 2<LineBreak/>
+                   4 x 3 - 6 / 2<LineBreak/>
+        </TextBlock>
+        <Label x:Name="labelTitle" Grid.ColumnSpan="2" Content="David Retief's Math Expression Parser" HorizontalContentAlignment="Center" Height="37" Margin="10,10,0,0" VerticalAlignment="Top" Width="405" FontSize="18" />
+    </Grid>
+</Window>
